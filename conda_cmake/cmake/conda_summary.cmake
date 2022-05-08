@@ -1,0 +1,23 @@
+include(conda_print)
+include(conda_print_list)
+include(conda_color)
+include(conda_variable)
+conda_raw("--------------- summary ---------------------")
+conda_print_label("NameSpace" "${PROJECT_NAME}")
+conda_print_label("Version" "${PROJECT_VERSION}")
+conda_print_label("Install dir" "${CMAKE_INSTALL_PREFIX}")
+conda_print_label("Platform" "${HOST_SYSTEM_NAME}")
+conda_print_label("Package File" "${CONDA_PACKAGE_FILE_NAME}")
+conda_print_list_label("Pckage Type" CONDA_GENERATOR)
+conda_print_list_label("CMAKE_MODULE_PATH" CMAKE_MODULE_PATH)
+conda_print_list_label("CMAKE_PREFIX_PATH" CMAKE_PREFIX_PATH)
+conda_print_list_label("CONDA_INCLUDE_DIRS" CONDA_INCLUDE_DIRS)
+
+conda_raw("-------------------------")
+
+if (ENABLE_SUMMARY_CXX_FLAG)
+    conda_print_list_label("CXX OPTS" CONDA_DEFAULT_COPTS)
+    conda_print_list_label("CXX TEST OPTS" CONDA_DEFAULT_COPTS)
+
+    conda_raw("------------------------------------")
+endif ()
