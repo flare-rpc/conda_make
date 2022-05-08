@@ -1,2 +1,3 @@
 # conda_make
-conda
+
+- [conda 使用基础](docs/conda_install.md)
